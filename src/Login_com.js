@@ -3,8 +3,8 @@ export function Login_com(){
     return(
         <div>
         <Login/>
-        <Login_UP/>
-        <Login_IN/>
+        {/* <Login_UP/>
+        <Login_IN/> */}
         </div>
     )
 }

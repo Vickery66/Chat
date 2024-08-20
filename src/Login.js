@@ -14,121 +14,121 @@ const SignIn=gql`
   signIn(username: $username, email: $email, password: $password)
 }
 `;
-export class Login extends React.Component{
-    constructor(props){
-        super(props);
-        this.state={
-            username:"",
-            email:"",
-            password:"",
-        }
-        this.handleUsernameChange=this.handleUsernameChange.bind(this);
-        this.handleEmailChange=this.handleEmailChange.bind(this);
-        this.handlePasswordChange=this.handlePasswordChange.bind(this);
-        this.handleSubmit=this.handleSubmit.bind(this);
-    }
-    handleUsernameChange(e){
-        e.preventDefault();
-        this.setState({username:e.target.value});
-    }
-    handleEmailChange(e){
-        e.preventDefault();
-        this.setState({email:e.target.value});
-    }
-    handlePasswordChange(e){
-        e.preventDefault();
-        this.setState({password:e.target.value});
-    }
-    handleSubmit(e){
-        e.preventDefault();
-        localStorage.setItem("username",this.state.username);
-        localStorage.setItem("email",this.state.email);
-        localStorage.setItem("password",this.state.password);
-        localStorage.setItem("submited",1);
-    }   
-    render(){
-        return(
-            <form className="form" onSubmit={this.handleSubmit}>
-                <span>
-                    <label> username:</label>
-                    <input type='text' value={this.state.username} onChange={this.handleUsernameChange}/>
-                </span>
-                <span>
-                    <label>    email:</label>
-                    <input type='text' value={this.state.email} onChange={this.handleEmailChange}/>
-                </span>
-                <span>
-                    <label> password:</label>
-                    <input type='password' value={this.state.password} onChange={this.handlePasswordChange}/>
-                </span>
-                <button className="btn" type='submit'> 提交 </button>
-            </form>
-        )
-    }
-}
-
-
-// export function Login(){
-//     const [signUp] = useMutation(SignUp,{onCompleted:data=>{
-//         localStorage.setItem('token',data.signUp);
-//      }});
-//     const [signIn] = useMutation(SignIn,{onCompleted:data=>{
-//         localStorage.setItem('token',data.signIn);
-//     }});
-//     const navigate=useNavigate();
-//     const [username,setUsername]=useState('');
-//     const [email,setEmail]=useState('');
-//     const [password,setPassword]=useState('');
-//     const handleUsernameChange=(e)=>{
-//         setUsername(e.target.value);
+// export class Login extends React.Component{
+//     constructor(props){
+//         super(props);
+//         this.state={
+//             username:"",
+//             email:"",
+//             password:"",
+//         }
+//         this.handleUsernameChange=this.handleUsernameChange.bind(this);
+//         this.handleEmailChange=this.handleEmailChange.bind(this);
+//         this.handlePasswordChange=this.handlePasswordChange.bind(this);
+//         this.handleSubmit=this.handleSubmit.bind(this);
 //     }
-//     const handleEmailChange=(e)=>{
-//         setEmail(e.target.value);
+//     handleUsernameChange(e){
+//         e.preventDefault();
+//         this.setState({username:e.target.value});
 //     }
-//     const handlePasswordChange=(e)=>{
-//         setPassword(e.target.value);
+//     handleEmailChange(e){
+//         e.preventDefault();
+//         this.setState({email:e.target.value});
 //     }
-//     const handleSignIn=()=>{
-//         localStorage.setItem("username",username);
-//         localStorage.setItem("email",email);
-//         localStorage.setItem("password",password);
-//         signIn({variables:{
-//             username:username,
-//             email:email,
-//             password:password}}
-//         );
-//         navigate('/Home/*');
+//     handlePasswordChange(e){
+//         e.preventDefault();
+//         this.setState({password:e.target.value});
 //     }
-//     const handleSignUp=()=>{
-//         localStorage.setItem("username",username);
-//         localStorage.setItem("email",email);
-//         localStorage.setItem("password",password);
-//         signUp({variables:{
-//             username:username,
-//             email:email,
-//             password:password}}
-//         );
-//         navigate('/Home/*');
+//     handleSubmit(e){
+//         e.preventDefault();
+//         localStorage.setItem("username",this.state.username);
+//         localStorage.setItem("email",this.state.email);
+//         localStorage.setItem("password",this.state.password);
+//         localStorage.setItem("submited",1);
+//     }   
+//     render(){
+//         return(
+//             <form className="form" onSubmit={this.handleSubmit}>
+//                 <span>
+//                     <label> username:</label>
+//                     <input type='text' value={this.state.username} onChange={this.handleUsernameChange}/>
+//                 </span>
+//                 <span>
+//                     <label>    email:</label>
+//                     <input type='text' value={this.state.email} onChange={this.handleEmailChange}/>
+//                 </span>
+//                 <span>
+//                     <label> password:</label>
+//                     <input type='password' value={this.state.password} onChange={this.handlePasswordChange}/>
+//                 </span>
+//                 <button className="btn" type='submit'> 提交 </button>
+//             </form>
+//         )
 //     }
-//     return(
-//         <form className="form">
-//             <span>
-//                 <label> username:</label>
-//                 <input type='text' value={username} onChange={handleUsernameChange}/>
-//             </span>
-//             <span>
-//                 <label>    email:</label>
-//                 <input type='text' value={email} onChange={handleEmailChange}/>
-//             </span>
-//             <span>
-//                 <label> password:</label>
-//                 <input type='password' value={password} onChange={handlePasswordChange}/>
-//             </span>
-//             <button className='btn1' onClick={handleSignUp}>创建</button>
-//             <button className='btn2' onClick={handleSignIn}>登录</button>
-//         </form>
-//     );
 // }
+
+
+export function Login(){
+    const [signUp] = useMutation(SignUp,{onCompleted:data=>{
+        localStorage.setItem('token',data.signUp);
+     }});
+    const [signIn] = useMutation(SignIn,{onCompleted:data=>{
+        localStorage.setItem('token',data.signIn);
+    }});
+    const navigate=useNavigate();
+    const [username,setUsername]=useState('');
+    const [email,setEmail]=useState('');
+    const [password,setPassword]=useState('');
+    const handleUsernameChange=(e)=>{
+        setUsername(e.target.value);
+    }
+    const handleEmailChange=(e)=>{
+        setEmail(e.target.value);
+    }
+    const handlePasswordChange=(e)=>{
+        setPassword(e.target.value);
+    }
+    const handleSignIn=()=>{
+        localStorage.setItem("username",username);
+        localStorage.setItem("email",email);
+        localStorage.setItem("password",password);
+        signIn({variables:{
+            username:username,
+            email:email,
+            password:password}}
+        );
+        navigate('/Home/*');
+    }
+    const handleSignUp=()=>{
+        localStorage.setItem("username",username);
+        localStorage.setItem("email",email);
+        localStorage.setItem("password",password);
+        signUp({variables:{
+            username:username,
+            email:email,
+            password:password}}
+        );
+        navigate('/Home/*');
+    }
+    return(
+        <form className="form">
+            <span>
+                <label> username:</label>
+                <input type='text' value={username} onChange={handleUsernameChange}/>
+            </span>
+            <span>
+                <label>    email:</label>
+                <input type='text' value={email} onChange={handleEmailChange}/>
+            </span>
+            <span>
+                <label> password:</label>
+                <input type='password' value={password} onChange={handlePasswordChange}/>
+            </span>
+            <button className='btn1' onClick={handleSignUp}>创建</button>
+            <button className='btn2' onClick={handleSignIn}>登录</button>
+        </form>
+    );
+}
 
 export function Login_UP(){
      const [signUp, { data, loading, error }] = useMutation(SignUp,{onCompleted:data=>{

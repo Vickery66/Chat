@@ -7,7 +7,7 @@ export function Chat(){
                 <Notes/>
             </div>
             <Input/>
-            <Send/>
+            {/* <Send/> */}
         </div>
     )
 }
