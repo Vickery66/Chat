@@ -17,10 +17,10 @@ function divide(notes){
     return (
         <div>
             {
-                rev_notes.map((note)=>{
+                rev_notes.map((note,index)=>{
                     if(note.to===sessionStorage.getItem("aim_toid"))
                         return (
-                            <div className='my'>
+                            <div className='my' key={index}>
                                 <span className='chat_name_my'>{sessionStorage.getItem("username")}</span>
                                 <span className='chat_content_my'>{note.content}</span>
                                 <hr></hr>
@@ -29,7 +29,7 @@ function divide(notes){
                     else
                         
                         return (
-                            <div className='his'>
+                            <div className='his' key={index}>
                                 <span className='chat_name_his'>{sessionStorage.getItem("aim_username")}</span>
                                 <span className='chat_content_his'>{note.content}</span>
                                 <hr></hr>

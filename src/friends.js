@@ -2,11 +2,11 @@ import React from 'react';
 import {useQuery,gql,useApolloClient,useMutation} from '@apollo/client'; 
 import { User } from './User';
 const Friend=gql`
-    query{
-  users{
-    id
+   query{
+  friends{
     username
     email
+    id
   }
 }
 `
@@ -17,8 +17,8 @@ export function Friends(){
     return (
         <div className='friends'>
             {
-                data.users.map((user)=>{
-                    return (<User data={user}/>)
+                data.friends.map((user,index)=>{
+                    return (<User data={user} key={index}/>)
                 })
             }
         </div>

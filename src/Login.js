@@ -44,7 +44,7 @@ export function Login(){
             email:email,
             password:password}}
         );
-        navigate('/Home/*');
+        navigate('/Home');
     }
     const handleSignUp=()=>{
         sessionStorage.setItem("username",username);
@@ -55,7 +55,7 @@ export function Login(){
             email:email,
             password:password}}
         );
-        navigate('/Home/*');
+        navigate('/Home');
     }
     return(
         <form className="form">

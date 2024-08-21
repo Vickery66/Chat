@@ -49,6 +49,24 @@
   box-shadow:0 0 10px 0 rgba(0,0,0,0.25);
   opacity: 50%;
 }
+.me{
+  position: absolute;
+  left:80%;
+  top:0px;
+  width: 20%;
+  height:60px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.avatarContain{
+  height: 58px;
+  width: 58px;
+  border: solid 1px black;
+  border-radius: 50%;
+  margin-left: 10px;
+  overflow: hidden;
+}
 
 .form{
   position: absolute;
@@ -89,11 +107,12 @@
   top:100px;
   left: 320px;
 }
-.home{
+.info{
   position: absolute;
   top:60px;
   left:0px;
-  height: 540px;
+  height: calc(100% - 60px);
+  width: 30%;
 }
 .Name{ 
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -104,11 +123,7 @@
 
   
 }
-.info{
-  position: absolute;
-  top:0px;
-  left:0px;
-}
+
 .friends{
   overflow-y: auto;
 }
@@ -116,26 +131,19 @@
   display: flex;
   flex-direction: column;
   background-color: aliceblue;
-  border: rgb(0, 255, 200) 2px solid;
-  border-radius:10px;
   margin-top: 10px;
 }
 
 .user:hover{
   background-color: white;
 }
-.leader{
-  position: absolute;
-  top:20px;
-  left: 400px;
-}
+
 .Chat{
   position: absolute;
-  top:0px;
-  left: 140px;
-  width: 620px;
-  height: 450px;
-  background-color: rgb(215, 247, 235);
+  top:60px;
+  left: 30%;
+  width: 67%;
+  height: 70%;
   overflow-y: auto;
   padding-left: 20px;
   padding-right: 20px;
@@ -143,18 +151,18 @@
 }
 .input{
   position: absolute;
-  left: 140px;
-  top: 450px;
-  width: 660px;
-  height: 110px;
+  left: 30%;
+  top: calc(70% + 60px);
+  width: 67%;
+  height: calc(28% - 60px);
   padding: 0;
   text-align: left;
   font-size: 20px;
 }
 .send{
   position: absolute;
-  top:500px;
-  left:760px;
+  top:93%;
+  left:93%;
 }
 .my{
   display: flex;

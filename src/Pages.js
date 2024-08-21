@@ -4,17 +4,16 @@ import {useQuery,gql} from '@apollo/client';
 import { Login_com } from './Login_com';
 import { Hello } from './Hello';
 import { Navigation } from './Navigation';
-import { Home } from './Home';
+import { Info } from './Info';
 import { Chat } from './Chat';
+import { LayOut } from './LayOut';
 export const Pages=()=>{
     return (
         <Router>
                 <Routes>
                     <Route exact path='/' element={<Hello/>}/>
                     <Route exact path="/Login" element={<Login_com/>}/>
-                    <Route exact path='/Home/*' element={<Home/>}>
-                        <Route exact path='Chat' element={<Chat/>}/>
-                    </Route>
+                    <Route exact path='/Home' element={<LayOut/>}/>
                 </Routes>
         </Router>
     );

@@ -33,7 +33,7 @@ export function Input(){
     }
     return(
         <>
-        <input type="text" className='input' value={value} onChange={handleChange} onKeyDown={handleKeyDown}/>
+        <textarea className='input' value={value} onChange={handleChange} onKeyDown={handleKeyDown}/>
         <button className='send' onClick={handleClick}>发送</button>
         </>
     );
