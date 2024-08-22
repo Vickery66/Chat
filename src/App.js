@@ -1,8 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import {ApolloClient,ApolloProvider,InMemoryCache,createHttpLink,} from '@apollo/client';
 import { setContext } from 'apollo-link-context';
-import Notes from './Note'
 import { Header1 } from './Header';
 import { Pages } from './Pages';
 

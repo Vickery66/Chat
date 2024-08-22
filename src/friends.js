@@ -1,5 +1,5 @@
-import React from 'react';
-import {useQuery,gql,useApolloClient,useMutation} from '@apollo/client'; 
+import React, { useEffect } from 'react';
+import {useQuery,gql} from '@apollo/client'; 
 import { User } from './User';
 const Friend=gql`
    query{
@@ -11,7 +11,7 @@ const Friend=gql`
 }
 `
 export function Friends(){
-    const {data,loading,error,fetchMore}=useQuery(Friend);
+    const {data,loading,error}=useQuery(Friend);
     if(loading) return <p>Loading...</p>;
     if(error) return <p>Error!</p>;
     return (

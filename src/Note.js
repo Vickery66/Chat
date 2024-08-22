@@ -47,11 +47,13 @@ function Notes(){
     useEffect(() => {  
         const timer = setInterval(() => {  
             const newAimId = sessionStorage.getItem("aim_toid");
-            setAimId(newAimId); // 更新 aim_id 并触发 useQuery 重新运行
-            refetch({ fetchPolicy: 'network-only' });
+            if(newAimId){
+                setAimId(newAimId); // 更新 aim_id 并触发 useQuery 重新运行
+                refetch({ fetchPolicy: 'network-only' });
+            }
         }, 500);  
          return () => clearInterval(timer); // 组件卸载时清理定时器  
-      }, [aim_id,refetch]); 
+      }, [refetch]); 
     
     if(loading) return <p>Loading...</p>;
     if(error) return <p>Error!</p>;

@@ -1,11 +1,7 @@
 import {BrowserRouter as Router,Route, Routes} from 'react-router-dom';
 import React from 'react';
-import {useQuery,gql} from '@apollo/client'; 
 import { Login_com } from './Login_com';
 import { Hello } from './Hello';
-import { Navigation } from './Navigation';
-import { Info } from './Info';
-import { Chat } from './Chat';
 import { LayOut } from './LayOut';
 export const Pages=()=>{
     return (

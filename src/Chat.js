@@ -1,5 +1,5 @@
 import Notes from './Note';
-import { Input, Send } from './Input';
+import { Input} from './Input';
 export function Chat(){
     return(
         <div>

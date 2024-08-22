@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import {useQuery,gql,useApolloClient,useMutation} from '@apollo/client'; 
-import { Link } from "react-router-dom"
+import {gql,useMutation} from '@apollo/client'; 
 import { useNavigate } from 'react-router-dom';
 const SignUp=gql`
     mutation($username: String!, $email: String!, $password: String!){

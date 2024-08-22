@@ -1,5 +1,5 @@
 import React from 'react';
-import {useQuery,gql,useApolloClient,useMutation} from '@apollo/client'; 
+import {gql,useMutation} from '@apollo/client'; 
 import { useState } from 'react';
 const New_Note=gql`
     mutation newNote($content: String!, $to: String!){
@@ -10,7 +10,7 @@ const New_Note=gql`
 `
 
 export function Input(){
-    const [newNote, { data, loading, error }] = useMutation(New_Note);
+    const [newNote] = useMutation(New_Note);
     const [value,setValue]=useState('');
     const handleChange=(e)=>{
         setValue(e.target.value);
